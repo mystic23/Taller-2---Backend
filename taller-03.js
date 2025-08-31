@@ -38,12 +38,28 @@ function conversionRomana(string) {
 
     let suma = 0;
     if (sigt && act < sigt) {
-      suma = -act;   // resta
+      suma = -act;   
     } else {
-      suma = act;    // suma
+      suma = act;    
     }
-
-    return acc + suma;  // acumulamos sobre el total
+    return acc + suma;  
   }, 0);
 }
-console.log(conversionRomana("V"));      // 3
+console.log(conversionRomana("V"));   //5
+
+
+
+function descomposicion(string){
+    const divide = string.split(",");
+    const objetivo = divide[0];
+    const grupo = divide.slice(1); // aqui corto el arreglo desde la posicion 1 
+
+    const primerPalabra = grupo.find(palabra => grupo.includes(objetivo.replace(palabra, ''))
+    && objetivo === palabra + objetivo.replace(palabra, ''));
+    
+    if (!primerPalabra) return [];
+
+    segundaPalabra = objetivo.replace(primerPalabra, '');
+    return [primerPalabra, segundaPalabra];
+}
+console.log(descomposicion("hellomaria,hello,world,maria,hell,o,weorl")); 
