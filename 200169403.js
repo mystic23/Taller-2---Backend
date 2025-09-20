@@ -101,8 +101,8 @@ function puntoCuatro(estudiantes) {
   const apellido = masAlto.e?.info_personal?.apellido ?? "";
 
     return {
-    nombreCompleto: `${nombre} ${apellido}`.trim(),
-    altura: masAlto.altura/100
+    nombreCompleto: `${nombre} ${apellido}`.trim()
+    // ,altura: masAlto.altura/100
   };  
 } 
 
